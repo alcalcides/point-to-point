@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## 0.0.3-SNAPSHOT - 2021-06-02
+### Added
+- Entity People linked to a GET request
+- Auto loader for development environment
+
 ## 0.0.2-SNAPSHOT - 2021-06-01
 ### Added
 - Shell Script for docker support
