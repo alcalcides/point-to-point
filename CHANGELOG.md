@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### 0.0.5 SNAPSHOT - 2021-06-03
+### Added
+- Connects with MySQL database
+
 ### 0.0.4-SNAPSHOT - 2021-06-02
 ### Added
 - Content Negotiation support
