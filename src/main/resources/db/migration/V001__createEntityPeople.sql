@@ -1,0 +1,6 @@
+CREATE TABLE `people` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(80) NOT NULL,
+	`email` VARCHAR(50) NOT NULL UNIQUE,
+	PRIMARY KEY (`id`)
+);

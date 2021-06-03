@@ -6,9 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### 0.0.6 SNAPSHOT - 2021-06-03
+### Added
+- Creates the 3 main tables with Flyway
+
+### Deprecated
+- People list
+
 ### 0.0.5 SNAPSHOT - 2021-06-03
 ### Added
 - Connects with MySQL database
+
+### Deprecated
+- People list
 
 ### 0.0.4-SNAPSHOT - 2021-06-02
 ### Added
