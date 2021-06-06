@@ -6,39 +6,43 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### 0.0.8 SNAPSHOT - 2021-06-06
+### 0.3.2 SNAPSHOT - 2021-06-06
+### Fixed
+- Fixes versioning historical
+
+### 0.3.1 SNAPSHOT - 2021-06-06
 ### Changed
 - Creates repository for table querying
 
-### 0.0.7 SNAPSHOT - 2021-06-06
+### 0.3.0 SNAPSHOT - 2021-06-06
 ### Added
 - Reads the table people
 
 ### Removed
 - People list
 
-### 0.0.6 SNAPSHOT - 2021-06-03
+### 0.2.1 SNAPSHOT - 2021-06-03
 ### Added
 - Creates the 3 main tables with Flyway
 
 ### Deprecated
 - People list
 
-### 0.0.5 SNAPSHOT - 2021-06-03
+### 0.2.0 SNAPSHOT - 2021-06-03
 ### Added
 - Connects with MySQL database
 
 ### Deprecated
 - People list
 
-### 0.0.4-SNAPSHOT - 2021-06-02
+### 0.1.1-SNAPSHOT - 2021-06-02
 ### Added
 - Content Negotiation support
 
 ### Deprecated
 - People list
 
-## 0.0.3-SNAPSHOT - 2021-06-02
+## 0.1.0-SNAPSHOT - 2021-06-02
 ### Added
 - Entity People linked to a GET request
 - Auto loader for development environment
