@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### 0.4.0 SNAPSHOT - 2021-06-06
+### Added
+- Searches for people by ID
+
 ### 0.3.3 SNAPSHOT - 2021-06-06
 ### Fixed
 - Fixes ID SQL data type to BIGINT
