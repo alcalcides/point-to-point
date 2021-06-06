@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### 0.0.8 SNAPSHOT - 2021-06-06
+### Changed
+- Creates repository for table querying
+
 ### 0.0.7 SNAPSHOT - 2021-06-06
 ### Added
 - Reads the table people
