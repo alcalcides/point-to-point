@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### 0.0.7 SNAPSHOT - 2021-06-06
+### Added
+- Reads the table people
+
+### Removed
+- People list
+
 ### 0.0.6 SNAPSHOT - 2021-06-03
 ### Added
 - Creates the 3 main tables with Flyway
