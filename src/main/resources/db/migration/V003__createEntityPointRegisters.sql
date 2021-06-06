@@ -1,7 +1,7 @@
 CREATE TABLE `point_registers` (
-	`id` INT NOT NULL AUTO_INCREMENT,
-	`people` INT NOT NULL,
-	`enterprise` INT NOT NULL,
+	`id` BIGINT NOT NULL AUTO_INCREMENT,
+	`people` BIGINT NOT NULL,
+	`enterprise` BIGINT NOT NULL,
 	`time` TIMESTAMP NOT NULL,
 	PRIMARY KEY (`id`)
 );

@@ -1,0 +1,2 @@
+INSERT INTO `people`(`name`, `email`) VALUES ('Alcides Augusto Bezerra Neto','alcalcides@hotmail.com');
+INSERT INTO `people`(`name`, `email`) VALUES ('Anderson Augusto Bezerra','andersonaugusto@live.com');
