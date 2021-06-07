@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,14 +19,23 @@ public class PeopleController {
 	private PeopleRepository peopleRepository;
 
 	@GetMapping("/people")
-	public List<People> list() {
-		return peopleRepository.findAll();
+	public ResponseEntity<List<People>> list() {
+		if (peopleRepository.findAll().size() > 0) {
+			return ResponseEntity.ok(peopleRepository.findAll());
+		} else {
+			return ResponseEntity.noContent().build();
+		}
 	}
 
 	@GetMapping("/people/{peopleId}")
-	public People findById(@PathVariable Long peopleId) {
+	public ResponseEntity<People> findById(@PathVariable Long peopleId) {
 		Optional<People> person = peopleRepository.findById(peopleId);
-		return person.orElse(null);
+		if (person.isPresent()) {
+			return ResponseEntity.ok(person.get());
+		} else {
+			return ResponseEntity.notFound().build();
+		}
+
 	}
 
 }
