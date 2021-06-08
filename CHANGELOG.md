@@ -6,7 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### 0.4.1 SNAPSHOT - 2021-06-06
+### 0.5.0 SNAPSHOT - 2021-06-07
+### Added
+- Register people in proper database table
+
+### 0.4.1 SNAPSHOT - 2021-06-07
 ### Fixed
 - Corrects the responses status code
 
