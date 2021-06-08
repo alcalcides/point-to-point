@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -65,6 +66,18 @@ public class PeopleController {
 			peopleRepository.save(people);
 
 			return ResponseEntity.ok().build();
+		}
+
+	}
+
+	@DeleteMapping("/{peopleId}")
+	public ResponseEntity<Void> delete(@PathVariable Long peopleId) {
+		Boolean peopleExists = peopleRepository.existsById(peopleId);
+		if (!peopleExists) {
+			return ResponseEntity.notFound().build();
+		} else {
+			peopleRepository.deleteById(peopleId);
+			return ResponseEntity.noContent().build();
 		}
 
 	}
