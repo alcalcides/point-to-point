@@ -13,7 +13,7 @@
 
 	<groupId>ads</groupId>
 	<artifactId>pointToPoint</artifactId>
-	<version>0.7.0-SNAPSHOT</version>
+	<version>0.8.0-SNAPSHOT</version>
 	<name>pointToPoint</name>
 	<description>Registro de ponto</description>
 
@@ -70,6 +70,12 @@
 		<dependency>
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/jakarta.validation/jakarta.validation-api -->
+		<dependency>
+			<groupId>jakarta.validation</groupId>
+			<artifactId>jakarta.validation-api</artifactId>
 		</dependency>
 
 	</dependencies>

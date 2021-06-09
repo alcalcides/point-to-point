@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### 0.8.0 SNAPSHOT - 2021-06-07
+### Added
+- Validates people data entry
+
 ### 0.7.0 SNAPSHOT - 2021-06-07
 ### Added
 - Deletes a person's record

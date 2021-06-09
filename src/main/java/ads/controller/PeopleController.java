@@ -3,6 +3,8 @@ package ads.controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,7 +40,7 @@ public class PeopleController {
 	}
 
 	@GetMapping("/{peopleId}")
-	public ResponseEntity<People> findById(@PathVariable Long peopleId) {
+	public ResponseEntity<People> findById(@Valid @PathVariable Long peopleId) {
 		Optional<People> person = peopleRepository.findById(peopleId);
 
 		if (person.isPresent()) {
@@ -51,12 +53,12 @@ public class PeopleController {
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public People create(@RequestBody People people) {
+	public People create(@Valid @RequestBody People people) {
 		return peopleRepository.save(people);
 	}
 
 	@PutMapping("/{peopleId}")
-	public ResponseEntity<People> update(@PathVariable Long peopleId, @RequestBody People people) {
+	public ResponseEntity<People> update(@Valid @PathVariable Long peopleId, @Valid @RequestBody People people) {
 
 		Boolean peopleExists = peopleRepository.existsById(peopleId);
 		if (!peopleExists) {
@@ -71,7 +73,7 @@ public class PeopleController {
 	}
 
 	@DeleteMapping("/{peopleId}")
-	public ResponseEntity<Void> delete(@PathVariable Long peopleId) {
+	public ResponseEntity<Void> delete(@Valid @PathVariable Long peopleId) {
 		Boolean peopleExists = peopleRepository.existsById(peopleId);
 		if (!peopleExists) {
 			return ResponseEntity.notFound().build();
