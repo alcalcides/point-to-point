@@ -6,7 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### 0.8.0 SNAPSHOT - 2021-06-07
+### 0.8.1 SNAPSHOT - 2021-06-08
+### Changed
+- Formats responses with validations errors reports
+
+### 0.8.0 SNAPSHOT - 2021-06-08
 ### Added
 - Validates people data entry
 
