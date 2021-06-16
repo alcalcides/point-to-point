@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import ads.domain.exception.BusinessException;
 import ads.domain.model.People;
 import ads.domain.repository.PeopleRepository;
 
@@ -17,7 +18,7 @@ public class PeopleService {
 	public People create(People people) {
 		List<People> peopleWithSameEmail = searchByEmail(people.getEmail());
 		if (!peopleWithSameEmail.isEmpty()) {
-			throw new RuntimeException("There is already a person with same email");
+			throw new BusinessException("There is already a person with same email");
 		}
 
 		return peopleRepository.save(people);
@@ -30,12 +31,12 @@ public class PeopleService {
 		Boolean isThereOnlyOnePerson = peopleWithSameEmail.size() == 1;
 
 		if (!isThereOnlyOnePerson) {
-			throw new RuntimeException("Profile not found");
+			throw new BusinessException("Profile not found");
 		} else {
 			People peopleTarget = peopleWithSameEmail.get(0);
 			Boolean isTheSamePerson = peopleTarget.getId() == people.getId();
 			if (!isTheSamePerson) {
-				throw new RuntimeException("That is not possible to update different profiles");
+				throw new BusinessException("That is not possible to update different profiles");
 			} else {
 				return peopleRepository.save(people);
 			}
