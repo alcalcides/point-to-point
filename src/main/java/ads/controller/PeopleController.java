@@ -19,18 +19,18 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import ads.domain.model.People;
-import ads.domain.repository.PeopleRepository;
+import ads.domain.service.PeopleService;
 
 @RestController
 @RequestMapping("/people")
 public class PeopleController {
 
 	@Autowired
-	private PeopleRepository peopleRepository;
+	private PeopleService peopleService;
 
 	@GetMapping
 	public ResponseEntity<List<People>> list() {
-		List<People> allPeople = peopleRepository.findAll();
+		List<People> allPeople = peopleService.getAll();
 
 		if (allPeople.size() > 0) {
 			return ResponseEntity.ok(allPeople);
@@ -41,7 +41,7 @@ public class PeopleController {
 
 	@GetMapping("/{peopleId}")
 	public ResponseEntity<People> findById(@Valid @PathVariable Long peopleId) {
-		Optional<People> person = peopleRepository.findById(peopleId);
+		Optional<People> person = peopleService.searchById(peopleId);
 
 		if (person.isPresent()) {
 			return ResponseEntity.ok(person.get());
@@ -54,18 +54,20 @@ public class PeopleController {
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public People create(@Valid @RequestBody People people) {
-		return peopleRepository.save(people);
+		return peopleService.create(people);
 	}
 
 	@PutMapping("/{peopleId}")
-	public ResponseEntity<People> update(@Valid @PathVariable Long peopleId, @Valid @RequestBody People people) {
+	public ResponseEntity<People> update(
+			@Valid @PathVariable Long peopleId, 
+			@Valid @RequestBody People people) {
 
-		Boolean peopleExists = peopleRepository.existsById(peopleId);
+		Boolean peopleExists = peopleService.isThere(peopleId);
 		if (!peopleExists) {
 			return ResponseEntity.notFound().build();
 		} else {
 			people.setId(peopleId);
-			peopleRepository.save(people);
+			peopleService.update(people);
 
 			return ResponseEntity.ok().build();
 		}
@@ -74,11 +76,11 @@ public class PeopleController {
 
 	@DeleteMapping("/{peopleId}")
 	public ResponseEntity<Void> delete(@Valid @PathVariable Long peopleId) {
-		Boolean peopleExists = peopleRepository.existsById(peopleId);
+		Boolean peopleExists = peopleService.isThere(peopleId);
 		if (!peopleExists) {
 			return ResponseEntity.notFound().build();
 		} else {
-			peopleRepository.deleteById(peopleId);
+			peopleService.delete(peopleId);
 			return ResponseEntity.noContent().build();
 		}
 
