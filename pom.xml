@@ -13,7 +13,7 @@
 
 	<groupId>ads</groupId>
 	<artifactId>pointToPoint</artifactId>
-	<version>0.8.5-SNAPSHOT</version>
+	<version>0.9.0-SNAPSHOT</version>
 	<name>pointToPoint</name>
 	<description>Registro de ponto</description>
 
