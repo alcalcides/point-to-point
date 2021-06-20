@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## 0.10.0 SNAPSHOT - 2021-06-20
+### Added
+- Records a company
+
 ## 0.9.0 SNAPSHOT - 2021-06-20
 ### Added
 - Reads the table 'enterprises'
